@@ -1,0 +1,9 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  hello: "Hello world"
+  enter_code_notice: "To get access to trasmission enter a code provided by seller."
+  code_has_been_used_notice: "Code has been already used."
+  code_used_notice: "Code is invalid."
+  code_invalid_notice: "Code is invalid"

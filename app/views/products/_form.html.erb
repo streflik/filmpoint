@@ -1,0 +1,31 @@
+<%= simple_form_for(@product) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="inputs">
+    <%= f.input :name %>
+    <%= f.input :permalink %>
+    <%= f.input :cookie_exp_at %>
+    <%= f.input :embed_code %>
+  </div>
+
+   Not used Codes:
+  <ul>
+    <%@product.codes.not_used.each do |code|%>
+    <li><%= code.value%></li>
+      <% end%>
+  </ul>
+
+  Used Codes:
+  <ul>
+    <%@product.codes.used.each do |code|%>
+    <li><%= code.value%> Czas: <%= code.used_at%></li>
+      <% end%>
+  </ul>
+
+  <%= link_to "Generate 10 codes", generate_codes_product_path(@product, :quantity=>10)%>
+  <%= link_to "Generate 50 codes", generate_codes_product_path(@product, :quantity=>50)%>
+
+  <div class="actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
