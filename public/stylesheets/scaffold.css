@@ -42,7 +42,9 @@ div.field, div.actions {
 }
 
 #new_code input.string {
-    width: 200px
+    width: 190px;
+    padding:5px;
+    font-size:20px
 }
 
 
