@@ -107,7 +107,7 @@ def find_product
   if params[:id]
     @product= Product.find params[:id]
   else
-    @product = Product.find_by_permalink params[:permalink]
+    @product = Product.find_by_permalink(params[:permalink])
   end
 end
 
