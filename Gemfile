@@ -9,6 +9,7 @@ gem 'mysql2'
 gem "devise"
 gem "simple_form"
 gem 'responders'
+gem "capistrano"
 
 # Use unicorn as the web server
 # gem 'unicorn'
