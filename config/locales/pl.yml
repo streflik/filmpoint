@@ -26,7 +26,8 @@ pl:
         first_name: "Imię"
         last_name: "Nazwisko"
       code:
-        value: Kod
+        value: 'Wpisz Kod (6 znaków):'
+        submit: 'ss'
       product:
         embed_code: Embed
         name: Nazwa

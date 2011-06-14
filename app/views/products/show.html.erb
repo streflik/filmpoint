@@ -1,15 +1,32 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @product.name %>
-</p>
+                               <div class="grid_16">
+<%= render :partial => 'smd' %>
+                                 </div>
 
-<p>
-  <b>Permalink:</b>
-  <%= @product.permalink %>
-</p>
+ <div class="grid_11">
+
+<object id="mediaPlayer-106" width="640" height="360" type="application/x-shockwave-flash" name="videoPlayer-106" data="http://player.videocms.pl/eventio/Player.swf" style="visibility: visible;">
+<param name="movie" value="http://player.videocms.pl/eventio/Player.swf"/>
+<param name="allowfullscreen" value="true"/>
+<param name="allowscriptaccess" value="always"/>
+<param name="bgcolor" value="#000000"/>
+<param name="wmode" value="transparent"/>
+<param name="flashvars" value="xmlConfig=http://eventio.videocms.pl/wp-content/plugins/videocms/config_xml.php?params=106"/>
+</object>
+<script type="text/javascript" src="http://eventio.videocms.pl/wp-content/plugins/videocms/embed_js.php?params=106"></script>
+ </div>
 
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<div class="5">
+<div id="fb-root"></div>
+  <script src="http://connect.facebook.net/en_US/all.js#appId=224466267572814&amp;xfbml=1"></script>
+  <fb:live-stream event_app_id="224466267572814" width="280" height="500" xid="" always_post_to_friends="false"></fb:live-stream>
+</div>
+
+
+<div class="clear"></div>
+
+        <% if user_signed_in? %>
+<%= link_to 'Edytuj', edit_product_path(@product) %>
+     <% end %>
+

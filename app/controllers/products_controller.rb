@@ -2,24 +2,12 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.xml
   before_filter :find_product, :only=>[:show,:buy]
-  before_filter :authenticate_user!, :except=>[:show,:buy]
+  before_filter :authenticate_user!, :except=>[:index,:show,:buy]
   before_filter :check_code, :only=>:show
-
-
-  def index
-    @products = Product.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @products }
-    end
-  end
 
   # GET /products/1
   # GET /products/1.xml
   def show
-#    @product = Product.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @product }
@@ -27,7 +15,6 @@ class ProductsController < ApplicationController
   end
 
   def buy
-#    @product=Product.find params[:id]
     if params[:code].present? && @product
       if code = Code.where(:value=>params[:code][:value]).first
         if code.used_at.nil?
@@ -95,16 +82,15 @@ class ProductsController < ApplicationController
 
   # DELETE /products/1
   # DELETE /products/1.xml
-  def destroy
-    @product = Product.find(params[:id])
-    @product.destroy
+  #def destroy
+  #  @product = Product.find(params[:id])
+  #  @product.destroy
 
-    respond_to do |format|
-      format.html { redirect_to(products_url) }
-      format.xml  { head :ok }
-    end
-  end
-
+  #  respond_to do |format|
+  #    format.html { redirect_to(products_url) }
+  #   format.xml  { head :ok }
+  #  end
+  #end
 
 def generate_codes
   params[:quantity].to_i.times do
@@ -112,9 +98,6 @@ def generate_codes
   end
   redirect_to :action=>:edit
 end
-
-
-
 
 end
 

@@ -1,15 +1,13 @@
 FilmpointBasic::Application.routes.draw do
 
   devise_for :user
+
   resources :users  do
     member do
       get "password"
       put "password"
     end
   end
-
-
-
 
   resources :products do
     member do
@@ -19,7 +17,7 @@ FilmpointBasic::Application.routes.draw do
     end
   end
 
-   match ":permalink" => "products#show", :as=>"product_permalink"
+  match ":permalink" => "products#show", :as=>"product_permalink"
   match ":permalink/buy" => "products#buy"
 
   # The priority is based upon order of creation:

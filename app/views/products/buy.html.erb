@@ -1,4 +1,17 @@
+
+<div class="grid_16">
+<%= render :partial => 'smd' %>
+  </div>
+
+
+<div class="grid_16">
+
 <%= simple_form_for Code.new, :url=> buy_product_url(@product) do |f| %>
-  <%= f.input :value%>
-  <%= f.submit%>
+  <%= f.input :value %>
+  <%= f.submit "Odblokuj Transmisję" %>
 <% end%>
+
+  <p class="alert">Ważne: Kod można wykorzystać tylko na 1 komputerze!<br/>
+    Nie podawaj kodu innym osobom i nie czyść cookies swojej przeglądarki.</p>
+
+</div>
